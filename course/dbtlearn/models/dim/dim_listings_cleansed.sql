@@ -1,3 +1,10 @@
+{{
+    config(
+      materialized = 'view'
+      )
+}}
+
+
 WITH src_listings as (
     select 
         * 
