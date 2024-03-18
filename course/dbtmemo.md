@@ -56,6 +56,7 @@ d	status	updated_at	dbt_valid_from	dbt_valid_to
 
 - **Tests** //データ品質検査
   ```dbt test```
+  ```dbt test --select dim_listings_cleansed```(#`dim_listings_cleansed`に関連するテストのみ実行する)
 
   -下記がUdemyコースで作成したymlファイル。注意点としてはymlファイルの名称は`schema.yml`とする点。
    `unique`,`not_null`, `accepted_values`,`relationships`のテストが標準機能だと可能。
@@ -91,8 +92,17 @@ models:
 
 -**Macros, custom test**
 
-
+ -dbtが提供する各社のユースケースに則した品質テストを作成する事が出来る機能。
+  dbt側で開発済みのテンプレートは340ほどあり、品質テストを強化したい場合などに使用する事が出来る。
 
   ```sql
+
+  {% macro no_nulls_in_columns(model) %}
+    SELECT * FROM {{ model }} WHERE
+    {% for col in adapter.get_columns_in_relation(model) -%}
+        {{col.column}} is null or 
+    {% endfor %}
+    FALSE
+{% endmacro %}
 
   ```
