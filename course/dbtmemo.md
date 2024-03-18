@@ -55,6 +55,7 @@ d	status	updated_at	dbt_valid_from	dbt_valid_to
 1	doing	2022-01-02	2022-01-02	null
 
 - **Tests** //データ品質検査
+  ```dbt test```
 
   -下記がUdemyコースで作成したymlファイル。注意点としてはymlファイルの名称は`schema.yml`とする点。
    `unique`,`not_null`, `accepted_values`,`relationships`のテストが標準機能だと可能。
@@ -87,3 +88,11 @@ models:
                       'Shared room',
                       'Hotel room']
 ```
+
+-**Macros, custom test**
+
+
+
+  ```sql
+
+  ```
