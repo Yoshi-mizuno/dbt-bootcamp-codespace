@@ -1,3 +1,9 @@
+- Git Commit
+
+1: `Git add .`でコミット対象を選択
+2: `git commit -m "Go"`でコミット実行
+
+
 - Source
     - **freshness**
         チェックコマンド：`dbt source freshness`
@@ -106,3 +112,5 @@ models:
 {% endmacro %}
 
   ```
+
+
