@@ -113,4 +113,14 @@ models:
 
   ```
 
+- Catalog
 
+  - descriptionの記載の方法
+
+Command:
+    `dbt docs generate`
+    `dbt docs serve`
+
+- Markdown方式でカタログ情報を記載する
+- Overviewページを修正する
+- Assetsファルダを作成し、ymlファイルにパスを通して、イメージを登録する
